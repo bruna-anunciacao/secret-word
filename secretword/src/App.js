@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import StartScreen from './components/StartScreen/StartScreen';
 
 function App() {
   return (
     <div className="App">
-      <h1>secret word</h1>
+      <StartScreen />
     </div>
   );
 }

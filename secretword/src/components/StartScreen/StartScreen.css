@@ -1,0 +1,15 @@
+.startWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.startWrapper h1{
+    font-size: 4rem;
+    color: #fff;
+}
+
+.startWrapper p {
+    font-size: 1.5rem;
+    color: #fdad18;
+}

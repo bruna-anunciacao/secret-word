@@ -1,5 +1,35 @@
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+  background: linear-gradient(180deg, #40008a 0%, #22024777 100%);
+  
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  padding: .5rem 2rem;
+  
+  border: 2px solid #fff;
+  border-radius: 1.5rem;
+  
+  background: #6522b1b2;
+  color: #fff;
+  
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #fff;
+  color: #6522b1b2;
 }
