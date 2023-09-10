@@ -15,11 +15,23 @@ const stages = [
 function App() {
   const [stage, setStage] = useState(stages[0].name);
   const [words] = useState(wordsList);
+
+  const handleStartGame = () => {
+    setStage(stages[1].name);
+  }
+
+  const verifyLetter = () => {
+    setStage(stages[2].name);
+  }  
+
+  const retry = () => {
+    setStage(stages[0].name);
+  }
   return (
     <div className="App">
-      {stage === "start" && <StartScreen />}
-      {stage === "game" && <Game />}
-      {stage === "end" && <GameOver />}
+      {stage === "start" && <StartScreen startGame={handleStartGame} />}
+      {stage === "game" && <Game verifyLetter={verifyLetter}/>}
+      {stage === "end" && <GameOver retry={retry}/>}
     </div>
   );
 }
