@@ -29,8 +29,7 @@ function App() {
     const word =
       words[category][Math.floor(Math.random() * words[category].length)];
     console.log(word);
-      return { word, category };
-    
+    return { word, category };
   };
 
   const startGame = () => {
@@ -47,7 +46,10 @@ function App() {
 
   const verifyLetter = (letter) => {
     const normalizedLetter = letter.toLowerCase();
-    if (guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)) {
+    if (
+      guessedLetters.includes(normalizedLetter) ||
+      wrongLetters.includes(normalizedLetter)
+    ) {
       return;
     }
     if (letters.includes(normalizedLetter)) {
@@ -61,7 +63,7 @@ function App() {
   const clearLetterStates = () => {
     setGuessedLetters([]);
     setWrongLetters([]);
-  }
+  };
 
   useEffect(() => {
     if (guesses === 0) {
@@ -90,7 +92,7 @@ function App() {
           points={points}
         />
       )}
-      {stage === "end" && <GameOver retry={retry} />}
+      {stage === "end" && <GameOver retry={retry} points={points} />}
     </div>
   );
 }
