@@ -43,8 +43,8 @@ function App() {
     setStage(stages[1].name);
   };
 
-  const verifyLetter = () => {
-    setStage(stages[2].name);
+  const verifyLetter = (letter) => {
+    console.log(letter);
   };
 
   const retry = () => {
