@@ -78,6 +78,11 @@
     margin-bottom: 1rem;
 }
 
-.wrongLettersWrapper span {
+.wrongLetters{
+    display: flex;
+    gap: .5rem;
+}
+
+.wrongLetters span {
     color: #f7db15;
 }

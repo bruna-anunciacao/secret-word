@@ -28,7 +28,9 @@ function App() {
     const category = categories[Math.floor(Math.random() * categories.length)];
     const word =
       words[category][Math.floor(Math.random() * words[category].length)];
-    return { word, category };
+    console.log(word);
+      return { word, category };
+    
   };
 
   const startGame = () => {
@@ -44,7 +46,16 @@ function App() {
   };
 
   const verifyLetter = (letter) => {
-    console.log(letter);
+    const normalizedLetter = letter.toLowerCase();
+    if (guessedLetters.includes(normalizedLetter) || wrongLetters.includes(normalizedLetter)) {
+      return;
+    }
+    if (letters.includes(normalizedLetter)) {
+      setGuessedLetters([...guessedLetters, normalizedLetter]);
+    } else {
+      setWrongLetters([...wrongLetters, normalizedLetter]);
+      setGuesses(guesses - 1);
+    }
   };
 
   const retry = () => {

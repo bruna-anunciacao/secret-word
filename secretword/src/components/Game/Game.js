@@ -58,11 +58,13 @@ const Game = ({
       </div>
       <div className="wrongLettersWrapper">
         <p>Letras já digitadas:</p>
-        {wrongLetters.map((letter, index) => (
-          <span key={index} className="wrongLetter">
-            {letter}
-          </span>
-        ))}
+        <div className="wrongLetters">
+          {wrongLetters.map((letter, index) => (
+            <span key={index} className="wrongLetter">
+              {letter}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
