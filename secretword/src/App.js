@@ -58,7 +58,21 @@ function App() {
     }
   };
 
+  const clearLetterStates = () => {
+    setGuessedLetters([]);
+    setWrongLetters([]);
+  }
+
+  useEffect(() => {
+    if (guesses === 0) {
+      clearLetterStates();
+      setStage(stages[2].name);
+    }
+  }, [guesses]);
+
   const retry = () => {
+    setGuesses(4);
+    setPoints(0);
     setStage(stages[0].name);
   };
   return (
